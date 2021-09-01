@@ -1,0 +1,103 @@
+body {
+    font-family: "Arial", sans-serif;
+}
+section {
+    text-align: center;
+}
+.game--container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 150px;
+    margin: 50px auto;
+}
+.cell {
+    font-family: "Permanent Marker", cursive;
+    width: 50px;
+    height: 50px;
+    /* box-shadow: 0 0 0 1px #333333; */
+    border: 1px solid #333333;
+    cursor: pointer;
+    line-height: 50px;
+    font-size: 30px;
+}
+.cell:first-child, .cell:nth-child(2), .cell:nth-child(3){
+    border-top: none;
+}
+.cell:last-child, .cell:nth-child(8), .cell:nth-child(7){
+    border-bottom: none;
+}
+.cell:nth-child(3n + 1){
+    border-left: none;
+}
+.cell:nth-child(3n + 3){
+    border-right: none;
+}
+
+.cell:hover{
+    background-color:#bed9d057;
+}
+.game--title{
+    background-color: #b9b5b5;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+.game--restart, .next--game, .play--again{
+    cursor: pointer;
+    font-size: 15px;
+    background-color: gainsboro;
+    padding: 10px;
+    border-radius: 10px;
+}
+#player1-points{
+    position: absolute;
+    top: 30%;
+    left: 15%;
+}
+#player2-points{
+    position: absolute;
+    top: 30%;
+    right: 15%;
+}
+
+#display--result{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* font-size: 5rem; */
+}
+
+@media only screen and (max-width: 699px){
+    #players-container{
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    #player1-points{
+        position: inherit;
+        /* top: 10%; */
+    }
+    #player2-points{
+        position: inherit;
+    }
+}
+@media (min-width: 700px) and (max-width: 1000px){
+    #player1-points{
+        left: 10%;
+    }
+    #player2-points{
+        right: 10%;
+    }
+}
